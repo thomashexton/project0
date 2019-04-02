@@ -1,0 +1,58 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+main {
+	height: 100%;
+}
+
+.main-box {
+	background-color: #4f4765;
+	border-radius: 0.25rem;
+	/* padding: 2em; */
+	-webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+	-ms-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+	-o-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+	/* max-width: 50vw; */
+}
+
+#top-middle, #bot-middle {
+	border-left: 5px solid white;
+	border-right: 5px solid white;
+}
+
+#mid-right, #mid-left {
+	border-top: 5px solid white;
+	border-bottom: 5px solid white;
+}
+
+#mid-middle {
+	border: 5px solid white;
+}
+
+.cell {
+	cursor: pointer;
+}
+
+/* ///////////////////////////////////////////////////////////////////// */
+/* flex classes */
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-row {
+	display: row;
+	flex-direction: row;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.align-center {
+	align-items: center;
+}

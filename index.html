@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>Tic Tac Toe</title>
+
+	<!-- normalize -->
+	<!-- <link rel="stylesheet" href="css/normalise.css"> -->
+	<!-- Bulma -->
+	<link rel="stylesheet" href="css/bulma.css">
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="css/main.css">
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/logic.js"></script>
+	<script type="text/javascript" src="js/dom.js"></script>
 </head>
+
 <body>
-	<div class="main-box">
-		<div class="top-row">
-			<div class="top-left"></div>
-			<div class="top-middle"></div>
-			<div class="top-right"></div>
+	<main class="flex-col justify-center">
+		<div class="columns is-mobile is-centered">
+			<div class="column is-one-third">
+				<h1>Tic Tac Toe</h1>
+			</div>
 		</div>
-		<div class="mid-row">
-			<div class="mid-left"></div>
-			<div class="mid-middle"></div>
-			<div class="mid-right"></div>
+		<div class="columns is-mobile is-centered">
+			<div class="main-box column is-one-third">
+				<div class="columns is-mobile is-centered">
+					<div id="top-left" class="column cell" data-row="0" data-cell="0"><img src="img/blank.svg"></div>
+					<div id="top-middle" class="column cell" data-row="0" data-cell="1"><img src="img/blank.svg"></div>
+					<div id="top-right" class="column cell" data-row="0" data-cell="2"><img src="img/blank.svg"></div>
+				</div>
+				<div class="columns is-mobile is-centered">
+					<div id="mid-left" class="column cell" data-row="1" data-cell="0"><img src="img/blank.svg"></div>
+					<div id="mid-middle" class="column cell" data-row="1" data-cell="1"><img src="img/blank.svg"></div>
+					<div id="mid-right" class="column cell" data-row="1" data-cell="2"><img src="img/blank.svg"></div>
+				</div>
+				<div class="columns is-mobile is-centered">
+					<div id="bot-left" class="column cell" data-row="2" data-cell="0"><img src="img/blank.svg"></div>
+					<div id="bot-middle" class="column cell" data-row="2" data-cell="1"><img src="img/blank.svg"></div>
+					<div id="bot-right" class="column cell" data-row="2" data-cell="2"><img src="img/blank.svg"></div>
+				</div>
+			</div>
 		</div>
-		<div class="bot-row">
-			<div class="bot-left"></div>
-			<div class="bot-middle"></div>
-			<div class="bot-right"></div>
-		</div>
-	</div>
+	</main>
 </body>
+
 </html>
