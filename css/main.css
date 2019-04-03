@@ -8,44 +8,45 @@ body {
 	min-height: 100%;
 	overflow: hidden;
 	background-color: #FD5252;
+	padding: 2em 0;
 }
 
 .game-board {
 	background-color: #FD5252;
 	border-radius: 0.25rem;
+	border: 1px solid #933030;
 
-	margin-bottom: 1.5em;
 }
 
 #top-middle, #bot-middle {
-	border-left: 5px solid #E64B4B;
-	border-right: 5px solid #E64B4B;
+	border-left: 1px solid #933030;
+	border-right: 1px solid #933030;
 }
 
 #mid-right, #mid-left {
-	border-top: 5px solid #E64B4B;
-	border-bottom: 5px solid #E64B4B;
+	border-top: 1px solid #933030;
+	border-bottom: 1px solid #933030;
 }
 
 #mid-middle {
-	border: 5px solid #E64B4B;
+	border: 1px solid #933030;
 }
 
 .cell:hover {
-	background-color: #E64B4B;
+	background-color: #933030;
 	cursor: pointer;
 }
 
 h1, .button {
 	font-family: 'PT Sans', sans-sans-serif;
-	color: #D24545;
+	color: #933030;
 	font-weight: 700;
 }
 
 .button {
-	color: #E64B4B;
+	color: #933030;
 	background-color: #FD5252;
-	border-color: unset;
+	border-color: #FD5252;
 }
 
 .button:hover {
@@ -53,6 +54,9 @@ h1, .button {
 	border-color: #933030;
 }
 
+img {
+	margin-top: .25em;
+}
 /* ///////////////////////////////////////////////////////////////////// */
 /* flex classes */
 .flex-col {
