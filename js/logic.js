@@ -22,42 +22,42 @@ const game = {
 
 
 
-	addToBoard: function( whichMarker, whichKey, whichCell ) {
+	addToBoard: function( boardMarker, row, cell ) {
 
 		if (this.boardState) {
 			console.log('Game over.');
 			return;
 		}
 
-		if ( whichMarker === 'X' ) {
-			if ( whichCell === 0 ) {
-				this.board[ whichKey ].splice( 0, 1, 'X' );
+		if ( boardMarker === 'X' ) {
+			if ( cell === 0 ) {
+				this.board[ row ].splice( 0, 1, 'X' );
 
-			} else if ( whichCell === 1 ) {
-				this.board[ whichKey ].splice( 1, 1, 'X' );
+			} else if ( cell === 1 ) {
+				this.board[ row ].splice( 1, 1, 'X' );
 
-			} else if ( whichCell === 2 ) {
-				this.board[ whichKey ].splice( 2, 1, 'X' );
-
-			}
-			this.scanForMatch(whichMarker);
-
-		} else if ( whichMarker === 'O' ) {
-			if ( whichCell === 0 ) {
-				this.board[ whichKey ].splice( 0, 1, 'O' );
-
-			} else if ( whichCell === 1 ) {
-				this.board[ whichKey ].splice( 1, 1, 'O' );
-
-			} else if ( whichCell === 2 ) {
-				this.board[ whichKey ].splice( 2, 1, 'O' );
+			} else if ( cell === 2 ) {
+				this.board[ row ].splice( 2, 1, 'X' );
 
 			}
-			this.scanForMatch(whichMarker);
+			this.scanForMatch(boardMarker);
+
+		} else if ( boardMarker === 'O' ) {
+			if ( cell === 0 ) {
+				this.board[ row ].splice( 0, 1, 'O' );
+
+			} else if ( cell === 1 ) {
+				this.board[ row ].splice( 1, 1, 'O' );
+
+			} else if ( cell === 2 ) {
+				this.board[ row ].splice( 2, 1, 'O' );
+
+			}
+			this.scanForMatch(boardMarker);
 		}
 	},
 
-	scanForMatch: function(whichMarker) {
+	scanForMatch: function(boardMarker) {
 
 		for ( let i = 0; i < this.winningCombos.length; i += 1 ) {
 
@@ -71,8 +71,8 @@ const game = {
 			const y2 = this.winningCombos[ i ][ 2 ][ 1 ];
 
 			// checking for winning combos
-			if ( this.board[ x0 ][ y0 ] === whichMarker && this.board[ x1 ][ y1 ] === whichMarker && this.board[ x2 ][ y2 ] === whichMarker ) {
-				this.winner( whichMarker );
+			if ( this.board[ x0 ][ y0 ] === boardMarker && this.board[ x1 ][ y1 ] === boardMarker && this.board[ x2 ][ y2 ] === boardMarker ) {
+				this.winner( boardMarker );
 				this.boardState = true;
 				break;
 			} else if ( this.clickCount >= 8 ) {
@@ -81,8 +81,8 @@ const game = {
 		}
 	},
 
-	winner: function( whichMarker ) {
-		$( 'h1' ).text( `The winner is: ${whichMarker}` );
+	winner: function( boardMarker ) {
+		$( 'h1' ).text( `The winner is: ${boardMarker}` );
 	},
 
 	draw: function ( ) {
