@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Tic Tac Toe</title>
+	<title>Naughts & Crosses</title>
 
 	<!-- normalize -->
 	<link rel="stylesheet" href="css/normalise.css">
@@ -22,12 +22,12 @@
 <body>
 	<main class="flex-col justify-center">
 		<div class="columns is-centered is-mobile">
-			<div class="column">
-				<h1 class="has-text-centered is-size-1 is-size-4-mobile">Tic Tac Toe</h1>
+			<div class="column has-text-centered ">
+				<h1 class="is-size-2 is-size-4-mobile">Naughts & Crosses</h1>
 			</div>
 		</div>
 		<div class="columns is-mobile is-centered">
-			<div class="main-box g-ds column is-one-third is-full-mobile">
+			<div class="main-box mds column is-one-third is-full-mobile">
 				<div class="columns is-mobile is-centered">
 					<div id="top-left" class="column cell" data-row="0" data-cell="0"><img src="img/blank.svg"></div>
 					<div id="top-middle" class="column cell" data-row="0" data-cell="1"><img src="img/blank.svg"></div>
@@ -47,7 +47,7 @@
 		</div>
 		<div class="columns is-mobile is-centered is-gapless">
 			<div class="column is-one-third has-text-centered">
-				<button id="reset" class="button is-outlined g-ds is-size-7-mobile is-font-size-2">Reset</button>
+				<button id="reset" class="button mds is-size-7-mobile is-font-size-2">Reset</button>
 			</div>
 		</div>
 	</main>
