@@ -6,7 +6,7 @@ const game = {
 	},
 
 	boardState: false,
-
+	previousMarker: 0,
 	clickCount: 0,
 
 	winningCombos: [
@@ -20,12 +20,10 @@ const game = {
 		[ [0, 2], [1, 1], [2, 0] ]  // [7]
 	],
 
-
-
 	addToBoard: function( boardMarker, row, cell ) {
 
 		if (this.boardState) {
-			console.log('Game over.');
+			console.log( 'Game over, reset to play again.' );
 			return;
 		}
 
@@ -82,11 +80,13 @@ const game = {
 	},
 
 	winner: function( boardMarker ) {
-		$( 'h1' ).text( `The winner is: ${boardMarker}` );
+		$( 'h1' ).text( `The winner is: ${ boardMarker }` );
+		$( '#reset' ).css('visibility', 'visible');
 	},
 
-	draw: function ( ) {
+	draw: function() {
 		$( 'h1' ).text( 'Draw, click reset.' );
+		$( '#reset' ).css('visibility', 'visible');
 	},
 
 	reset: function() {
@@ -95,10 +95,11 @@ const game = {
 		game.board[1].splice( 0, 3, null, null, null );
 		game.board[2].splice( 0, 3, null, null, null );
 
-		lastRenderValue = 0;
 		game.clickCount = 0;
+		game.previousMarker = 0;
 		$( '.cell' ).data( 'render', 0 );
-		$( 'h1' ).text( 'Tic Tac Toe' );
+		$( '#reset' ).css('visibility', 'hidden');
+		$( 'h1' ).text( 'Naughts & Crosses' ).hide().fadeIn(500);
 		render();
 	}
 };

@@ -13,21 +13,19 @@ const render = function() {
 
 $( document ).ready( function() {
 
-	var lastRenderValue = 0;
-
 	// on page load, add data render attributes to jQuery '.cell' objects
 	$( '.cell' ).data( 'render', 0 );
 
 	$( '.cell' ).on( 'click', function() {
 
 		// checks to see if match has been found already
-		if (game.boardState) {
-			console.log('Game over.');
+		if ( game.boardState ) {
+			$('h1').html( 'Game over, reset to play again.' );
 			return;
 		}
 
 		// first click places an X
-		if ( lastRenderValue === 0 ) {
+		if ( game.previousMarker === 0 ) {
 			// change the jQuery object data-row='1'
 			$( this ).data( 'render', 'X' );
 
@@ -36,7 +34,7 @@ $( document ).ready( function() {
 
 			game.addToBoard( 'X', row, cell );
 
-			lastRenderValue = 'X';
+			game.previousMarker = 'X';
 			game.clickCount += 1;
 
 		} // so they can't reclick a used square
@@ -44,7 +42,7 @@ $( document ).ready( function() {
 			console.log( 'Can\'t reselect.' );
 
 		} // if previous marker placed was X (1) choose O (2)
-		else if ( lastRenderValue === 'X' ) {
+		else if ( game.previousMarker === 'X' ) {
 			$( this ).data( 'render', 'O' );
 
 			const row = $( this ).data( 'row' );
@@ -52,11 +50,11 @@ $( document ).ready( function() {
 
 			game.addToBoard( 'O', row, cell );
 
-			lastRenderValue = 'O';
+			game.previousMarker = 'O';
 			game.clickCount += 1;
 
 		} // if previous marker placed was O (2) choose X (1)
-		else if ( lastRenderValue === 'O' ) {
+		else if ( game.previousMarker === 'O' ) {
 			$( this ).data( 'render', 'X' );
 
 			const row = $( this ).data( 'row' );
@@ -64,7 +62,7 @@ $( document ).ready( function() {
 
 			game.addToBoard( 'X', row, cell );
 
-			lastRenderValue = 'X';
+			game.previousMarker = 'X';
 			game.clickCount += 1;
 
 		}
@@ -73,5 +71,6 @@ $( document ).ready( function() {
 		render();
 	} );
 
+	$( '#reset' ).css('visibility', 'hidden');
 	$( '#reset' ).on( 'click', game.reset );
 } );

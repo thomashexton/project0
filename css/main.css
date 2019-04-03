@@ -11,11 +11,11 @@ body {
 	padding: 2em 0;
 }
 
-.game-board {
+#game-board {
 	background-color: #FD5252;
 	border-radius: 0.25rem;
 	border: 1px solid #933030;
-
+	margin-bottom: 1.75em;
 }
 
 #top-middle, #bot-middle {
@@ -46,7 +46,8 @@ h1, .button {
 .button {
 	color: #933030;
 	background-color: #FD5252;
-	border-color: #FD5252;
+	border-color: #933030;
+	width: 100%;
 }
 
 .button:hover {
@@ -56,7 +57,13 @@ h1, .button {
 
 img {
 	margin-top: .25em;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
+
 /* ///////////////////////////////////////////////////////////////////// */
 /* flex classes */
 .flex-col {

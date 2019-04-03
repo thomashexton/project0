@@ -7,8 +7,6 @@
 
 	<title>Naughts & Crosses</title>
 
-	<!-- normalize -->
-	<!-- <link rel="stylesheet" href="css/normalise.css"> -->
 	<!-- Bulma -->
 	<link rel="stylesheet" href="css/bulma.css">
 	<!-- Main CSS -->
@@ -20,35 +18,51 @@
 </head>
 
 <body class="flex-col justify-center">
-			<div class="columns is-centered">
-				<div class="column has-text-centered ">
-					<h1 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop ">Naughts & Crosses</h1>
-				</div>
-			</div>
+
+
+	<div class="columns is-mobile is-marginless is-centered">
+
+		<div class="column has-text-centered ">
+			<h1 class="is-size-3-mobile is-size-2-tablet is-size-2-desktop ">Naughts & Crosses</h1>
+		</div>
+
+	</div> <!-- end columns -->
+
+
+	<div class="columns is-mobile is-marginless is-centered">
+
+		<div id="game-board" class="mds column is-two-thirds-mobile is-half-tablet is-one-third-desktop is-one-third-widescreen">
+
 			<div class="columns is-mobile is-centered">
-				<div class="game-board mds column is-two-thirds-mobile is-half-tablet is-one-third-desktop">
-					<div class="columns is-mobile is-centered">
-						<div id="top-left" class="column cell" data-row="0" data-cell="0"><img src="img/blank.svg"></div>
-						<div id="top-middle" class="column cell" data-row="0" data-cell="1"><img src="img/blank.svg"></div>
-						<div id="top-right" class="column cell" data-row="0" data-cell="2"><img src="img/blank.svg"></div>
-					</div>
-					<div class="columns is-mobile is-centered">
-						<div id="mid-left" class="column cell" data-row="1" data-cell="0"><img src="img/blank.svg"></div>
-						<div id="mid-middle" class="column cell" data-row="1" data-cell="1"><img src="img/blank.svg"></div>
-						<div id="mid-right" class="column cell" data-row="1" data-cell="2"><img src="img/blank.svg"></div>
-					</div>
-					<div class="columns is-mobile is-centered">
-						<div id="bot-left" class="column cell" data-row="2" data-cell="0"><img src="img/blank.svg"></div>
-						<div id="bot-middle" class="column cell" data-row="2" data-cell="1"><img src="img/blank.svg"></div>
-						<div id="bot-right" class="column cell" data-row="2" data-cell="2"><img src="img/blank.svg"></div>
-					</div>
-				</div>
-			</div>
-			<div class="columns is-centered">
-				<div class="column is-one-third has-text-centered">
-					<a id="reset" class="button mds">Reset</a>
-				</div>
-			</div>
+				<div id="top-left" class="column cell" data-row="0" data-cell="0"><img src="img/blank.svg"></div>
+				<div id="top-middle" class="column cell" data-row="0" data-cell="1"><img src="img/blank.svg"></div>
+				<div id="top-right" class="column cell" data-row="0" data-cell="2"><img src="img/blank.svg"></div>
+			</div> <!-- end columns -->
+			<div class="columns is-mobile is-centered">
+				<div id="mid-left" class="column cell" data-row="1" data-cell="0"><img src="img/blank.svg"></div>
+				<div id="mid-middle" class="column cell" data-row="1" data-cell="1"><img src="img/blank.svg"></div>
+				<div id="mid-right" class="column cell" data-row="1" data-cell="2"><img src="img/blank.svg"></div>
+			</div> <!-- end columns -->
+			<div class="columns is-mobile is-centered">
+				<div id="bot-left" class="column cell" data-row="2" data-cell="0"><img src="img/blank.svg"></div>
+				<div id="bot-middle" class="column cell" data-row="2" data-cell="1"><img src="img/blank.svg"></div>
+				<div id="bot-right" class="column cell" data-row="2" data-cell="2"><img src="img/blank.svg"></div>
+			</div> <!-- end columns -->
+
+		</div>
+
+	</div> <!-- end columns -->
+
+
+	<div class="columns is-mobile is-marginless is-centered">
+
+		<div class="column is-paddingless is-two-thirds-mobile is-half-tablet is-one-third-desktop is-one-third-widescreen">
+			<a id="reset" class="mds button is-medium">Reset</a>
+		</div>
+
+	</div> <!-- end columns -->
+
+
 </body>
 
 </html>
