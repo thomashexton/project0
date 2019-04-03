@@ -8,7 +8,7 @@
 	<title>Tic Tac Toe</title>
 
 	<!-- normalize -->
-	<!-- <link rel="stylesheet" href="css/normalise.css"> -->
+	<link rel="stylesheet" href="css/normalise.css">
 	<!-- Bulma -->
 	<link rel="stylesheet" href="css/bulma.css">
 	<!-- Main CSS -->
@@ -21,13 +21,13 @@
 
 <body>
 	<main class="flex-col justify-center">
-		<div class="columns is-mobile is-centered">
-			<div class="column is-one-third">
-				<h1>Tic Tac Toe</h1>
+		<div class="columns is-centered is-mobile">
+			<div class="column">
+				<h1 class="has-text-centered is-size-1 is-size-4-mobile">Tic Tac Toe</h1>
 			</div>
 		</div>
 		<div class="columns is-mobile is-centered">
-			<div class="main-box column is-one-third">
+			<div class="main-box g-ds column is-one-third is-full-mobile">
 				<div class="columns is-mobile is-centered">
 					<div id="top-left" class="column cell" data-row="0" data-cell="0"><img src="img/blank.svg"></div>
 					<div id="top-middle" class="column cell" data-row="0" data-cell="1"><img src="img/blank.svg"></div>
@@ -43,6 +43,11 @@
 					<div id="bot-middle" class="column cell" data-row="2" data-cell="1"><img src="img/blank.svg"></div>
 					<div id="bot-right" class="column cell" data-row="2" data-cell="2"><img src="img/blank.svg"></div>
 				</div>
+			</div>
+		</div>
+		<div class="columns is-mobile is-centered is-gapless">
+			<div class="column is-one-third has-text-centered">
+				<button id="reset" class="button is-outlined g-ds is-size-7-mobile is-font-size-2">Reset</button>
 			</div>
 		</div>
 	</main>

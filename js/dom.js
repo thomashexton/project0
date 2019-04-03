@@ -19,6 +19,13 @@ $( document ).ready( function() {
 	$( '.cell' ).data( 'render', 0 );
 
 	$( '.cell' ).on( 'click', function() {
+
+		// checks to see if match has been found already
+		if (game.boardState) {
+			console.log('Game over.');
+			return;
+		}
+
 		// first click places an X
 		if ( lastRenderValue === 0 ) {
 			// change the jQuery object data-row='1'
@@ -31,6 +38,7 @@ $( document ).ready( function() {
 			game.addToBoard( whichMarker, whichKey, whichCell );
 
 			lastRenderValue = 'X';
+			game.clickCount += 1;
 
 		} // so they can't reclick a used square
 		else if ( $( this ).data( 'render' ) !== 0 ) {
@@ -47,6 +55,7 @@ $( document ).ready( function() {
 			game.addToBoard( whichMarker, whichKey, whichCell );
 
 			lastRenderValue = 'O';
+			game.clickCount += 1;
 
 		} // if previous marker placed was O (2) choose X (1)
 		else if ( lastRenderValue === 'O' ) {
@@ -59,9 +68,13 @@ $( document ).ready( function() {
 			game.addToBoard( whichMarker, whichKey, whichCell );
 
 			lastRenderValue = 'X';
+			game.clickCount += 1;
+
 		}
 
 		// console.log( $( this ).data( 'row' ), $( this ).data( 'cell' ) );
 		render();
 	} );
+
+	$( '#reset' ).on( 'click', game.reset );
 } );

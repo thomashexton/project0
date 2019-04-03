@@ -5,6 +5,10 @@ const game = {
 		'2': [ null, null, null ]
 	},
 
+	boardState: false,
+
+	clickCount: 0,
+
 	winningCombos: [
 		[ [0, 0], [0, 1], [0, 2] ], // [0]
 		[ [1, 0], [1, 1], [1, 2] ], // [1]
@@ -16,10 +20,16 @@ const game = {
 		[ [0, 2], [1, 1], [2, 0] ]  // [7]
 	],
 
+
+
 	addToBoard: function( whichMarker, whichKey, whichCell ) {
-		// if boardX then put
+
+		if (this.boardState) {
+			console.log('Game over.');
+			return;
+		}
+
 		if ( whichMarker === 'X' ) {
-			// add to boardX
 			if ( whichCell === 0 ) {
 				this.board[ whichKey ].splice( 0, 1, 'X' );
 
@@ -30,11 +40,9 @@ const game = {
 				this.board[ whichKey ].splice( 2, 1, 'X' );
 
 			}
-
-			this.scanForMatch();
+			this.scanForMatch(whichMarker);
 
 		} else if ( whichMarker === 'O' ) {
-			// add to boardO
 			if ( whichCell === 0 ) {
 				this.board[ whichKey ].splice( 0, 1, 'O' );
 
@@ -45,12 +53,11 @@ const game = {
 				this.board[ whichKey ].splice( 2, 1, 'O' );
 
 			}
-
-			this.scanForMatch();
+			this.scanForMatch(whichMarker);
 		}
 	},
 
-	scanForMatch: function() {
+	scanForMatch: function(whichMarker) {
 
 		for ( let i = 0; i < this.winningCombos.length; i += 1 ) {
 
@@ -63,19 +70,35 @@ const game = {
 			const x2 = this.winningCombos[ i ][ 2 ][ 0 ];
 			const y2 = this.winningCombos[ i ][ 2 ][ 1 ];
 
-			// console.log( x2, y2 );
-			// console.log( this.board[ x2 ][ y2 ] );
-
-			if ( this.board[ x0 ][ y0 ] === 'X' && this.board[ x1 ][ y1 ] === 'X' && this.board[ x2 ][ y2 ] === 'X') {
-				console.log( 'Winner' );
+			// checking for winning combos
+			if ( this.board[ x0 ][ y0 ] === whichMarker && this.board[ x1 ][ y1 ] === whichMarker && this.board[ x2 ][ y2 ] === whichMarker ) {
+				this.winner( whichMarker );
+				this.boardState = true;
 				break;
-			} // check for O
-			else if ( this.board[ x0 ][ y0 ] === 'O' && this.board[ x1 ][ y1 ] === 'O' && this.board[ x2 ][ y2 ] === 'O' ) {
-				 console.log( 'Winner' );
-		  		break;
-			} else if () {
-				console.log('draw');
+			} else if ( this.clickCount >= 8 ) {
+				this.draw();
 			}
 		}
+	},
+
+	winner: function( whichMarker ) {
+		$( 'h1' ).text( `The winner is: ${whichMarker}` );
+	},
+
+	draw: function ( ) {
+		$( 'h1' ).text( 'Draw, click reset.' );
+	},
+
+	reset: function() {
+		game.boardState = false;
+		game.board[0].splice( 0, 3, null, null, null );
+		game.board[1].splice( 0, 3, null, null, null );
+		game.board[2].splice( 0, 3, null, null, null );
+
+		lastRenderValue = 0;
+		game.clickCount = 0;
+		$( '.cell' ).data( 'render', 0 );
+		$( 'h1' ).text( 'Tic Tac Toe' );
+		render();
 	}
 };
