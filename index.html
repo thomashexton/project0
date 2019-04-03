@@ -19,15 +19,14 @@
 	<script type="text/javascript" src="js/dom.js"></script>
 </head>
 
-<body>
-	<main class="flex-col justify-center">
+<body class="flex-col justify-center">
 		<div class="columns is-centered is-mobile">
 			<div class="column has-text-centered ">
 				<h1 class="is-size-2 is-size-4-mobile">Naughts & Crosses</h1>
 			</div>
 		</div>
 		<div class="columns is-mobile is-centered">
-			<div class="main-box mds column is-one-third is-full-mobile">
+			<div class="game-board mds column is-one-third is-full-mobile">
 				<div class="columns is-mobile is-centered">
 					<div id="top-left" class="column cell" data-row="0" data-cell="0"><img src="img/blank.svg"></div>
 					<div id="top-middle" class="column cell" data-row="0" data-cell="1"><img src="img/blank.svg"></div>
@@ -47,10 +46,9 @@
 		</div>
 		<div class="columns is-mobile is-centered is-gapless">
 			<div class="column is-one-third has-text-centered">
-				<button id="reset" class="button mds is-size-7-mobile is-font-size-2">Reset</button>
+				<a id="reset" class="button mds">Reset</a>
 			</div>
 		</div>
-	</main>
 </body>
 
 </html>

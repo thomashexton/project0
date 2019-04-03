@@ -31,11 +31,10 @@ $( document ).ready( function() {
 			// change the jQuery object data-row='1'
 			$( this ).data( 'render', 'X' );
 
-			const boardMarker = $( this ).data( 'render' );
 			const row = $( this ).data( 'row' );
 			const cell = $( this ).data( 'cell' );
 
-			game.addToBoard( boardMarker, row, cell );
+			game.addToBoard( 'X', row, cell );
 
 			lastRenderValue = 'X';
 			game.clickCount += 1;
@@ -48,11 +47,10 @@ $( document ).ready( function() {
 		else if ( lastRenderValue === 'X' ) {
 			$( this ).data( 'render', 'O' );
 
-			const boardMarker = $( this ).data( 'render' );
 			const row = $( this ).data( 'row' );
 			const cell = $( this ).data( 'cell' );
 
-			game.addToBoard( boardMarker, row, cell );
+			game.addToBoard( 'O', row, cell );
 
 			lastRenderValue = 'O';
 			game.clickCount += 1;
@@ -61,11 +59,10 @@ $( document ).ready( function() {
 		else if ( lastRenderValue === 'O' ) {
 			$( this ).data( 'render', 'X' );
 
-			const boardMarker = $( this ).data( 'render' );
 			const row = $( this ).data( 'row' );
 			const cell = $( this ).data( 'cell' );
 
-			game.addToBoard( boardMarker, row, cell );
+			game.addToBoard( 'X', row, cell );
 
 			lastRenderValue = 'X';
 			game.clickCount += 1;

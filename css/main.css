@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
 
-html, body {
+html{
 	height: 100%;
 	width: 100%;
 }
 
-main {
+body {
 	height: 100%;
 	background-color: #FD5252;
 }
 
-.main-box {
+.game-board {
 	background-color: #FD5252;
 	border-radius: 0.25rem;
 
@@ -31,17 +31,14 @@ main {
 	border: 5px solid #E64B4B;
 }
 
-.cell {
+.cell:hover {
+	background-color: #E64B4B;
 	cursor: pointer;
 }
 
-.cell:hover {
-	background-color: #E64B4B;
-}
-
-h1, button {
+h1, .button {
 	font-family: 'PT Sans', sans-sans-serif;
-	color: #E64B4B;
+	color: #D24545;
 	font-weight: 700;
 }
 
@@ -50,6 +47,11 @@ h1, button {
 	color: #E64B4B;
 	background-color: #FD5252;
 	border-color: unset;
+}
+
+.button:hover {
+	color: #933030;
+	border-color: #933030;
 }
 
 /* ///////////////////////////////////////////////////////////////////// */
