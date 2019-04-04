@@ -4,7 +4,7 @@ const render = function() {
 		if ( $( this ).data( 'render' ) === 'X' ) {
 			$( this ).html( '<img src="img/cross.svg">' )
 		} else if ( $( this ).data( 'render' ) === 'O' ) {
-			$( this ).html( '<img src="img/nought.svg">' )
+			$( this ).html( '<img src="img/naught.svg">' )
 		} else {
 			$( this ).html( '<img src="img/blank.svg">' )
 		}
