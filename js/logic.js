@@ -95,7 +95,7 @@ const game = {
 		game.previousMarker = false;
 		$( '.cell' ).data( 'render', 0 ).css( 'background-color', '#FD5252' );
 		$( '#reset' ).fadeTo(800, 0).addClass( 'unselectable' );
-		$( 'h1' ).text( 'Naughts & Crosses' ).fadeTo( 800, 0 );
+		$( 'h1' ).fadeTo( 800, 0 );
 		render();
 	}
 };
