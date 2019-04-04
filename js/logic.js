@@ -51,6 +51,7 @@ const game = {
 
 			const combos = this.winningCombos[ i ]
 
+			// iterate through each of the winningCombo complete arrays, digging down each level until getting the x and y coords for a winning combo
 			const row0 = this.winningCombos[ i ][ 0 ][ 0 ];
 			const col0 = this.winningCombos[ i ][ 0 ][ 1 ];
 			const row1 = this.winningCombos[ i ][ 1 ][ 0 ];
@@ -83,9 +84,6 @@ const game = {
 		$( '#reset' ).fadeTo( 0, 100 ).removeClass( 'unselectable' ).removeClass( 'vis-hidden' );
 	},
 	reset: function() {
-		$( '#game-board' ).removeClass( 'unselectable' );
-		$( '.cell' ).removeClass( 'winning-combo' )
-
 		game.boardState = false;
 		game.board[0].splice( 0, 3, null, null, null );
 		game.board[1].splice( 0, 3, null, null, null );
@@ -94,6 +92,8 @@ const game = {
 		game.clickCount = 0;
 		game.previousMarker = false;
 
+		$( '#game-board' ).removeClass( 'unselectable' );
+		$( '.cell' ).removeClass( 'winning-combo' )
 		$( '.cell' ).data( 'render', 0 ).css( 'background-color', '#FD5252' );
 		$( '#reset' ).fadeTo(800, 0).addClass( 'unselectable' );
 		$( 'h1' ).fadeTo( 800, 0 );

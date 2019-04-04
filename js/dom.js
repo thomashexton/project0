@@ -2,11 +2,11 @@ const render = function() {
 	// search each div and determine it's render state through the 'data-render=' value
 	$( '.cell' ).each( function() {
 		if ( $( this ).data( 'render' ) === 'X' ) {
-			$( this ).html( '<img src="img/cross.svg">' )
+			$( this ).html( '<img src="img/cross.svg">' );
 		} else if ( $( this ).data( 'render' ) === 'O' ) {
-			$( this ).html( '<img src="img/naught.svg">' )
+			$( this ).html( '<img src="img/naught.svg">' );
 		} else {
-			$( this ).html( '<img src="img/blank.svg">' )
+			$( this ).html( '<img src="img/blank.svg">' );
 		}
 	} );
 };
