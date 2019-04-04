@@ -4,7 +4,7 @@
 
 The task was to build, from the ground up, a functioning game of noughts & crosses using a mix of the first 2 weeks' learned technologies; *HTML*, *CSS* & *JavaScript*.
 
-I'd be lying if I said I found it easy. I pushed myself to try and have 2 separate *JS* files, one for DOM manipulation and another for the game logic. All animation is done through *CSS*, with *jQuery* manipulating the classes as necessary.
+I'd be lying if I said I found it easy. I pushed myself to try and have 2 separate *JS* files, one for DOM manipulation and another for the game logic. All animation is done through *CSS*, with *jQuery* manipulating the classes as necessary. Actually, thats a lie I use jQuery to fade the text.
 
 #### **Learnings**
 The way I pass in my naughts and crosses images is based on the *HTML* data attribute, I then ran a render() function after each click and depending on it's value place either the X or O. It took some discovery before I understood how jQuery actually treats this data type a bit different ... in that it doesn't actually manipulate and rewrite the DOM. If updating the data type through jQuery, it'll store it in *jQuery magic land* rather than the expect place (along with the original data types) ... and even those are technically also in *jQuery magic land*.
