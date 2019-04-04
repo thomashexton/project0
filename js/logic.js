@@ -23,7 +23,7 @@ const game = {
 	addToBoard: function( boardMarker, row, cell ) {
 
 		if (this.boardState) {
-			console.log( 'Game over, reset to play again.' );
+			console.log( 'Game over, click reset.' );
 			return;
 		}
 

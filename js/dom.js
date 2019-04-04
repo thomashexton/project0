@@ -20,7 +20,7 @@ $( document ).ready( function() {
 
 		// checks to see if match has been found already
 		if ( game.boardState ) {
-			$('h1').html( 'Game over, reset to play again.' );
+			$( 'h1' ).html( 'Game over, click reset.' );
 			return;
 		}
 
@@ -71,6 +71,6 @@ $( document ).ready( function() {
 		render();
 	} );
 
-	$( '#reset' ).css('visibility', 'hidden');
+	$( '#reset' ).css( 'visibility', 'hidden' );
 	$( '#reset' ).on( 'click', game.reset );
 } );
