@@ -76,7 +76,7 @@ const game = {
 
 		// upon win, disable mouse interaction through CSS
 		$(' #game-board ').addClass( 'unselectable' );
-		$( 'h1' ).text( `The winner is: ${ boardMarker }` ).fadeTo( 0, 100 );
+		$( 'h1' ).text( `${ boardMarker }'s win.` ).fadeTo( 0, 100 );
 		$( '#reset' ).fadeTo( 0, 100 ).removeClass( 'unselectable' ).removeClass( 'vis-hidden' );
 	},
 	draw: function() {
