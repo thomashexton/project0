@@ -12,7 +12,7 @@ The way I pass in my naughts and crosses images is based on the *HTML* data attr
 #### **Show Me Already**
 You can find my functioning naughts & crosses game here; https://trigotometry.github.io/project0/
 
-![Trigotometry's Naughts & Crosses Game](https://www.github.com/project0/naughts&crosses.png)
+![Trigotometry's Naughts & Crosses Game](https://raw.githubusercontent.com/Trigotometry/project0/master/naughts%26crosses.png)
 
 #### **Potential Updates & Additions.**
 I would like to add in a score counter, I'd like code it so scores fade in and out at the same rate as the h1 at the end of the round ... and if the mouse moves onto the left or right side of the game board, the scores are faded in.
