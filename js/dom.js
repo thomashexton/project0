@@ -32,9 +32,9 @@ $( document ).ready( function() {
 			$( this ).data( 'render', 'X' );
 
 			const row = $( this ).data( 'row' );
-			const cell = $( this ).data( 'cell' );
+			const column = $( this ).data( 'col' );
 
-			game.addToBoard( 'X', row, cell );
+			game.addToBoard( 'X', row, column );
 			game.previousMarker = 'X';
 			game.clickCount += 1;
 
@@ -43,9 +43,9 @@ $( document ).ready( function() {
 			$( this ).data( 'render', 'O' );
 
 			const row = $( this ).data( 'row' );
-			const cell = $( this ).data( 'cell' );
+			const column = $( this ).data( 'col' );
 
-			game.addToBoard( 'O', row, cell );
+			game.addToBoard( 'O', row, column );
 			game.previousMarker = 'O';
 			game.clickCount += 1;
 
@@ -54,9 +54,9 @@ $( document ).ready( function() {
 			$( this ).data( 'render', 'X' );
 
 			const row = $( this ).data( 'row' );
-			const cell = $( this ).data( 'cell' );
+			const column = $( this ).data( 'col' );
 
-			game.addToBoard( 'X', row, cell );
+			game.addToBoard( 'X', row, column );
 			game.previousMarker = 'X';
 			game.clickCount += 1;
 		}
