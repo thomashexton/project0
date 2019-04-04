@@ -38,6 +38,9 @@ $( document ).ready( function() {
 			game.previousMarker = 'X';
 			game.clickCount += 1;
 
+			// after page load, on first click of game
+			$( 'h1' ).fadeTo(800, 0);
+
 		} else if ( game.previousMarker === 'X' ) {
 			// if previous marker placed was 'X', place 'O'
 			$( this ).data( 'render', 'O' );
