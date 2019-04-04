@@ -64,6 +64,5 @@ $( document ).ready( function() {
 		render();
 	} );
 
-	$( '#reset' ).css( 'visibility', 'hidden' );
 	$( '#reset' ).on( 'click', game.reset );
 } );

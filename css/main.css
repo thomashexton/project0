@@ -35,7 +35,6 @@ body {
 }
 
 .winning-combo {
-	/* background-color: #FD5252; */
 	animation-name: color;
 	animation-duration: 1.5s;
 	animation-iteration-count: infinite;
@@ -79,6 +78,10 @@ img {
 
 .unselectable {
 	pointer-events: none;
+}
+
+.vis-hidden {
+	visibility: hidden;
 }
 
 /* ///////////////////////////////////////////////////////////////////// */

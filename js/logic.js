@@ -75,8 +75,8 @@ const game = {
 
 		// upon win, disable mouse interaction through CSS
 		$(' #game-board ').addClass( 'unselectable' ).addClass;
-		$( 'h1' ).text( `The winner is: ${ boardMarker }` );
-		$( '#reset' ).css( 'visibility', 'visible' );
+		$( 'h1' ).text( `The winner is: ${ boardMarker }` ).fadeTo( 800, 100);
+		$( '#reset' ).fadeTo(0, 100).removeClass( 'unselectable' ).removeClass( 'vis-hidden' );
 	},
 	draw: function() {
 		$( 'h1' ).text( 'Draw, click reset.' );
@@ -94,8 +94,8 @@ const game = {
 		game.clickCount = 0;
 		game.previousMarker = false;
 		$( '.cell' ).data( 'render', 0 ).css( 'background-color', '#FD5252' );
-		$( '#reset' ).css('visibility', 'hidden' );
-		$( 'h1' ).text( 'Naughts & Crosses' ).hide().fadeIn( 800 );
+		$( '#reset' ).fadeTo(800, 0).addClass( 'unselectable' );
+		$( 'h1' ).text( 'Naughts & Crosses' ).fadeTo( 800, 0 );
 		render();
 	}
 };
