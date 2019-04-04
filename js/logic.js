@@ -6,7 +6,7 @@ const game = {
 	},
 
 	boardState: false,
-	previousMarker: 0,
+	previousMarker: false,
 	clickCount: 0,
 
 	winningCombos: [
@@ -96,7 +96,7 @@ const game = {
 		game.board[2].splice( 0, 3, null, null, null );
 
 		game.clickCount = 0;
-		game.previousMarker = 0;
+		game.previousMarker = false;
 		$( '.cell' ).data( 'render', 0 );
 		$( '#reset' ).css('visibility', 'hidden');
 		$( 'h1' ).text( 'Naughts & Crosses' ).hide().fadeIn(500);

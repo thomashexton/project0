@@ -1,5 +1,5 @@
 const render = function() {
-	// iterate over each div and find if it's data value is equal to X or O ... replacing it as necessary
+	// search each div and determine it's render state through the 'data-render=' value
 	$( '.cell' ).each( function() {
 		if ( $( this ).data( 'render' ) === 'X' ) {
 			$( this ).html( '<img src="img/cross.svg">' )
@@ -13,61 +13,54 @@ const render = function() {
 
 $( document ).ready( function() {
 
-	// on page load, add data render attributes to jQuery '.cell' objects
-	$( '.cell' ).data( 'render', 0 );
+	// on page load, add data-render='false' attribute to all jQuery '.cell' objects
+	$( '.cell' ).data( 'render', false );
 
 	$( '.cell' ).on( 'click', function() {
 
-		// checks to see if match has been found already
 		if ( game.boardState ) {
-			$( 'h1' ).html( 'Game over, click reset.' );
+			// checks if winningCombos has been played already
+			$( 'h1' ).text( 'Game over, click reset.' );
 			return;
-		}
 
-		// first click places an X
-		if ( game.previousMarker === 0 ) {
-			// change the jQuery object data-row='1'
+		} else if ( $( this ).data( 'render' ) ) {
+			// if the cell clicked returns true in the data-render field, if returns true don't allow click
+			return;
+
+		} else if ( !game.previousMarker ) {
+			// if there previousMarker returns true, if not assigns first click to X
 			$( this ).data( 'render', 'X' );
 
 			const row = $( this ).data( 'row' );
 			const cell = $( this ).data( 'cell' );
 
 			game.addToBoard( 'X', row, cell );
-
 			game.previousMarker = 'X';
 			game.clickCount += 1;
 
-		} // so they can't reclick a used square
-		else if ( $( this ).data( 'render' ) !== 0 ) {
-			console.log( 'Can\'t reselect.' );
-
-		} // if previous marker placed was X (1) choose O (2)
-		else if ( game.previousMarker === 'X' ) {
+		} else if ( game.previousMarker === 'X' ) {
+			// if previous marker placed was 'X', place 'O'
 			$( this ).data( 'render', 'O' );
 
 			const row = $( this ).data( 'row' );
 			const cell = $( this ).data( 'cell' );
 
 			game.addToBoard( 'O', row, cell );
-
 			game.previousMarker = 'O';
 			game.clickCount += 1;
 
-		} // if previous marker placed was O (2) choose X (1)
-		else if ( game.previousMarker === 'O' ) {
+		} else if ( game.previousMarker === 'O' ) {
+			// if previous marker placed was 'O', place 'X'
 			$( this ).data( 'render', 'X' );
 
 			const row = $( this ).data( 'row' );
 			const cell = $( this ).data( 'cell' );
 
 			game.addToBoard( 'X', row, cell );
-
 			game.previousMarker = 'X';
 			game.clickCount += 1;
-
 		}
 
-		// console.log( $( this ).data( 'row' ), $( this ).data( 'cell' ) );
 		render();
 	} );
 

@@ -6,13 +6,10 @@ html {
 
 body {
 	min-height: 100%;
-	overflow: hidden;
 	background-color: #FD5252;
-	padding: 2em 0;
 }
 
 #game-board {
-	background-color: #FD5252;
 	border-radius: 0.25rem;
 	border: 1px solid #933030;
 	margin-bottom: 1.75em;
@@ -39,24 +36,18 @@ body {
 
 h1, .button {
 	font-family: 'PT Sans', sans-sans-serif;
-	color: #933030;
 	font-weight: 700;
+	color: #933030;
 }
 
 .button {
-	color: #933030;
 	background-color: #FD5252;
 	border-color: #933030;
 	width: 100%;
 }
 
-.button:hover {
-	color: #933030;
-	border-color: #933030;
-}
-
 img {
-	margin-top: .25em;
+	margin-top: 0.25em;
 	-moz-user-select: -moz-none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
