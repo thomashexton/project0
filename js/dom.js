@@ -28,7 +28,7 @@ $( document ).ready( function() {
 			return;
 
 		} else if ( !game.previousMarker ) {
-			// if there previousMarker returns true, if not assigns first click to X
+			// if previousMarker returns true, if not assigns first click to X
 			$( this ).data( 'render', 'X' );
 
 			const row = $( this ).data( 'row' );

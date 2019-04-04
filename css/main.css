@@ -34,6 +34,25 @@ body {
 	cursor: pointer;
 }
 
+.winning-combo {
+	/* background-color: #FD5252; */
+	animation-name: color;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes color {
+  0% {
+    background-color: #FD5252;
+  }
+  50% {
+    background-color: #933030;
+  }
+  100 {
+    background-color: #FD5252;
+  }
+}
+
 h1, .button {
 	font-family: 'PT Sans', sans-sans-serif;
 	font-weight: 700;
@@ -46,13 +65,20 @@ h1, .button {
 	width: 100%;
 }
 
+.button:hover {
+	color: #933030;
+	border-color: #933030;
+}
+
 img {
 	margin-top: 0.25em;
 	-moz-user-select: -moz-none;
-	-khtml-user-select: none;
 	-webkit-user-select: none;
-	-o-user-select: none;
 	user-select: none;
+}
+
+.unselectable {
+	pointer-events: none;
 }
 
 /* ///////////////////////////////////////////////////////////////////// */

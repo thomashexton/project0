@@ -60,7 +60,7 @@ const game = {
 
 			// checking for winning combos
 			if ( this.board[ row0 ][ col0 ] === boardMarker && this.board[ row1 ][ col1 ] === boardMarker && this.board[ row2 ][ col2 ] === boardMarker ) {
-				this.winner( boardMarker );
+				this.winner( boardMarker, row0, col0, row1, col1, row2, col2 );
 				this.boardState = true;
 				break;
 			} else if ( this.clickCount >= 8 ) {
@@ -68,15 +68,24 @@ const game = {
 			}
 		}
 	},
-	winner: function( boardMarker ) {
+	winner: function( boardMarker, row0, col0, row1, col1, row2, col2 ) {
+		// gather the DOM elements that match the row and col of the winning combo and addClass
+		const $winningCombo = $( `[data-row=${row0}][data-col=${col0}]` ).add( `[data-row=${row1}][data-col=${col1}]` ).add( `[data-row=${row2}][data-col=${col2}]` );
+		$winningCombo.addClass( 'winning-combo' )
+
+		// upon win, disable mouse interaction through CSS
+		$(' #game-board ').addClass( 'unselectable' ).addClass;
 		$( 'h1' ).text( `The winner is: ${ boardMarker }` );
-		$( '#reset' ).css('visibility', 'visible');
+		$( '#reset' ).css( 'visibility', 'visible' );
 	},
 	draw: function() {
 		$( 'h1' ).text( 'Draw, click reset.' );
-		$( '#reset' ).css('visibility', 'visible');
+		$( '#reset' ).css( 'visibility', 'visible' );
 	},
 	reset: function() {
+		$( '#game-board' ).removeClass( 'unselectable' );
+		$( '.cell' ).removeClass( 'winning-combo' )
+
 		game.boardState = false;
 		game.board[0].splice( 0, 3, null, null, null );
 		game.board[1].splice( 0, 3, null, null, null );
@@ -84,9 +93,9 @@ const game = {
 
 		game.clickCount = 0;
 		game.previousMarker = false;
-		$( '.cell' ).data( 'render', 0 );
-		$( '#reset' ).css('visibility', 'hidden');
-		$( 'h1' ).text( 'Naughts & Crosses' ).hide().fadeIn(500);
+		$( '.cell' ).data( 'render', 0 ).css( 'background-color', '#FD5252' );
+		$( '#reset' ).css('visibility', 'hidden' );
+		$( 'h1' ).text( 'Naughts & Crosses' ).hide().fadeIn( 800 );
 		render();
 	}
 };
