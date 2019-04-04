@@ -13,6 +13,8 @@ The way I pass in my naughts and crosses images is based on the *HTML* data attr
 You can find my functioning naughts & crosses game here; https://trigotometry.github.io/project0/
 
 #### **Potential Updates & Additions.**
-I would like to add in a score counter, I'd like code it so scores fade in and out at the same rate as the h1 at the end of the round ... and if the mouse moves onto the left or right side of the game board, the socres are faded in.
+I would like to add in a score counter, I'd like code it so scores fade in and out at the same rate as the h1 at the end of the round ... and if the mouse moves onto the left or right side of the game board, the scores are faded in.
+
+I could also add a second render function that fades the naughts and crosses out once the reset button is called.
 
 **Thank you to both Joel and Yianni for fielding questions.**
