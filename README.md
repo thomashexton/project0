@@ -12,8 +12,7 @@ The way I pass in my naughts and crosses images is based on the *HTML* data attr
 #### **Show Me Already**
 You can find my functioning naughts & crosses game here; https://trigotometry.github.io/project0/
 
-#### **Potential Updates.**
-~~I plan on refining the responsiveness, I'm not yet sure how I feel about Bulma over Bootstrap. Even though a number of posts have said the semantic approach it takes makes things easier to understand and guess, I'm not finding that with my own first attempt.~~
-Responsiveness updated and overall Bulma does seem quite cool, though it took a long time to work out how to get my reset button to maintain an equal size of the middle column. The padding and margin default for the button on top of the columns was a real nightmare.
+#### **Potential Updates & Additions.**
+I would like to add in a score counter, I'd like code it so scores fade in and out at the same rate as the h1 at the end of the round ... and if the mouse moves onto the left or right side of the game board, the socres are faded in.
 
 **Thank you to both Joel and Yianni for fielding questions.**
