@@ -10,7 +10,8 @@ I'd be lying if I said I found it easy. I pushed myself to try and have 2 separa
 The way I pass in my naughts and crosses images is based on the *HTML* data attribute, I then ran a render() function after each click and depending on it's value place either the X or O. It took some discovery before I understood how jQuery actually treats this data type a bit different ... in that it doesn't actually manipulate and rewrite the DOM. If updating the data type through jQuery, it'll store it in *jQuery magic land* rather than the expected place (along with the original data types) ... and even those are technically also in *jQuery magic land* once imported.
 
 #### **Show Me Already**
-You can find my functioning naughts & crosses game here; https://trigotometry.github.io/project0/
+You can find my functioning *naughts & crosses* game here;
+https://trigotometry.github.io/project0/
 
 ![Trigotometry's Naughts & Crosses Game](https://raw.githubusercontent.com/Trigotometry/project0/master/naughts%26crosses.png)
 
